@@ -1,0 +1,50 @@
+:root { --blue:#16a34a; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --bg:#f8fafc; }
+body { margin:0; font-family:system-ui,Segoe UI,Arial,sans-serif; background:var(--bg); color:var(--ink); }
+.wrap { max-width:1080px; margin:0 auto; padding:24px 16px 64px; }
+.top { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.brand { font-weight:800; font-size:22px; color:var(--blue); text-decoration:none; }
+h1 { font-size:34px; margin:24px 0 4px; } .sub { color:var(--muted); margin:0 0 28px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
+.card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px; display:flex; flex-direction:column; gap:10px; }
+.card.hot { border:2px solid var(--blue); }
+.badge { align-self:flex-start; background:var(--blue); color:#fff; font-size:12px; padding:2px 10px; border-radius:99px; }
+.speed { font-size:40px; font-weight:800; line-height:1; } .speed small { font-size:16px; color:var(--muted); font-weight:500; }
+.price { font-size:26px; font-weight:700; } .price small { font-size:13px; color:var(--muted); font-weight:400; }
+.card ul { padding-left:18px; margin:4px 0; color:#334155; font-size:14px; flex:1; }
+.btn { display:inline-block; background:var(--blue); color:#fff; border:0; border-radius:10px; padding:12px 16px; font-size:15px; font-weight:600; cursor:pointer; text-align:center; text-decoration:none; }
+.btn.ghost { background:#fff; color:var(--blue); border:1px solid var(--blue); }
+.btn:disabled { opacity:.6; cursor:wait; }
+.two { display:grid; grid-template-columns:1.4fr 1fr; gap:20px; align-items:start; }
+@media (max-width:760px){ .two{grid-template-columns:1fr;} }
+label { display:block; font-size:13px; color:var(--muted); margin:12px 0 4px; }
+input, select { width:100%; box-sizing:border-box; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:15px; }
+.row { display:flex; justify-content:space-between; gap:16px; padding:6px 0; }
+.row.total { border-top:1px solid var(--line); margin-top:6px; padding-top:12px; font-weight:800; font-size:18px; }
+.err { background:#fef2f2; color:#b91c1c; border:1px solid #fecaca; padding:10px 12px; border-radius:8px; margin-top:14px; }
+.ok { text-align:center; margin:8px 0 20px; } .ok .tick { font-size:48px; }
+.boleta { background:#fff; border:1px solid var(--line); border-radius:14px; padding:28px; max-width:620px; margin:0 auto; }
+.boleta h2 { margin:0; text-align:center; } .center { text-align:center; color:var(--muted); font-size:14px; }
+.boleta hr { border:0; border-top:1px dashed var(--line); margin:16px 0; }
+.actions { display:flex; gap:10px; justify-content:center; margin-top:20px; }
+@media print { .no-print{display:none !important;} body{background:#fff;} .boleta{border:0;} }
+/* RESPONSIVE-PLANES */
+.brand { display:inline-flex; align-items:center; gap:8px; }
+.logo { width:36px; height:36px; display:block; }
+.boleta .logo { margin:0 auto 6px; width:48px; height:48px; }
+.grid { grid-template-columns:repeat(4, minmax(0,1fr)); gap:14px; }
+@media (max-width:980px) {
+  .card { padding:14px; }
+  .speed { font-size:30px; }
+  .price { font-size:20px; }
+  .card ul { font-size:13px; }
+}
+@media (max-width:760px) {
+  .grid { grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; }
+  .wrap { padding:16px 10px 48px; }
+  h1 { font-size:26px; }
+  .card { padding:12px; gap:8px; }
+  .speed { font-size:28px; }
+  .price { font-size:18px; }
+  .card ul { font-size:12px; padding-left:16px; }
+  .btn { padding:10px 8px; font-size:14px; }
+}
