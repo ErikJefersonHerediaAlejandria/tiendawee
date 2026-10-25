@@ -1,4 +1,4 @@
-:root { --blue:#16a34a; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --bg:#f8fafc; }
+:root { --blue:#1dd836; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --bg:#f8fafc; }
 body { margin:0; font-family:system-ui,Segoe UI,Arial,sans-serif; background:var(--bg); color:var(--ink); }
 .wrap { max-width:1080px; margin:0 auto; padding:24px 16px 64px; }
 .top { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
