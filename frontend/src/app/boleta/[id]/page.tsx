@@ -2,10 +2,10 @@
 import '../../store.css';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { API, money } from '../../../lib/api';
 
-export default function Boleta() {
+function BoletaInner() {
   const { id } = useParams<{ id: string }>();
   const [o, setO] = useState<any>(null);
   const [error, setError] = useState('');
@@ -50,5 +50,13 @@ export default function Boleta() {
         <Link className="btn ghost" href="/">Volver a planes</Link>
       </div>
     </div>
+  );
+}
+
+export default function Boleta() {
+  return (
+    <Suspense fallback={<div className="wrap">Cargando…</div>}>
+      <BoletaInner />
+    </Suspense>
   );
 }

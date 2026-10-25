@@ -2,10 +2,10 @@
 import '../../store.css';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState, Suspense } from 'react';
 import { API, getPlans, money, Plan } from '../../../lib/api';
 
-export default function Checkout() {
+function CheckoutInner() {
   const { id } = useParams<{ id: string }>();
   const router = useRouter();
   const [plan, setPlan] = useState<Plan | null>(null);
@@ -71,5 +71,13 @@ export default function Checkout() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function Checkout() {
+  return (
+    <Suspense fallback={<div className="wrap">Cargando…</div>}>
+      <CheckoutInner />
+    </Suspense>
   );
 }
